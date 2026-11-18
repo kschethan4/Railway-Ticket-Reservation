@@ -50,6 +50,8 @@ pipeline {
     post {
         success {
             echo 'Pipeline completed successfully!'
+            archiveArtifacts artifacts: 'railway-reservation.zip',
+                 fingerprint: true
         }
 
         failure {
